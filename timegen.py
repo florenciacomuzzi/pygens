@@ -2,17 +2,19 @@ import time
 
 from fibonacci import fib_gen, fib_func
 
+ITERATIONS = 200000
+
+
 start = time.time()
 fib = fib_gen()
-[next(fib) for i in range(1000)]
+results = [next(fib) for i in range(ITERATIONS)]
 end = time.time()
 print('Total time for generator: {} seconds'.format(end - start))
 
 
 
 start = time.time()
-fib_func(1000)
-[next(fib) for i in range(1000)]
+results = fib_func(ITERATIONS)
 end = time.time()
 print('Total time for function: {} seconds'.format(end - start))
 
